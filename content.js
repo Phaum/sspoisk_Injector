@@ -6,7 +6,6 @@ function insertButton() {
     const button = document.createElement('button');
     button.id = 'my-custom-button';
     button.textContent = 'Смотреть кино';
-    // button.className = 'style_button__PNtXT style_buttonSize52__b5OBe style_buttonPrimary__ndPAb';
     button.className = 'style_button__PNtXT styles_watchOnlineButton__ruFtI style_buttonSize52__b5OBe style_buttonPlus__TjQez style_buttonLight____6ma style_withIconLeft___Myt9';
     button.style.marginLeft = '8px';
 
@@ -23,7 +22,6 @@ function insertButton() {
     const button = document.createElement('button');
     button.id = 'my-custom-button';
     button.textContent = 'Смотреть сериал';
-    // button.className = 'style_button__PNtXT style_buttonSize52__b5OBe style_buttonPrimary__ndPAb';
     button.className = 'style_button__PNtXT styles_watchOnlineButton__ruFtI style_buttonSize52__b5OBe style_buttonPlus__TjQez style_buttonLight____6ma style_withIconLeft___Myt9';
     button.style.marginLeft = '8px';
 
@@ -38,6 +36,3 @@ function insertButton() {
 }
 
 const interval = setInterval(insertButton, 500);
-
-
-// style_button__PNtXT kinopoisk-watch-online-button styles_watchOnlineButton__ruFtI style_buttonSize52__b5OBe style_buttonPlus__TjQez style_buttonLight____6ma style_withIconLeft___Myt9
