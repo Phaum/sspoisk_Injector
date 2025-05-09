@@ -1,27 +1,43 @@
 function insertButton() {
-    const container = document.querySelector('.styles_buttonsContainer__HREZO');
-    if (!container || document.querySelector('#my-custom-button')) return;
-    const wrapper = document.createElement('div');
-    wrapper.className = 'styles_button__tQYKG';
+    const filmContainer = document.querySelector('.styles_buttonsContainer__HREZO');
+    const seriesContainer = document.querySelector('.styles_buttonsContainer__i6y3F');
+
+  if (filmContainer && !document.getElementById('my-custom-button')) {
     const button = document.createElement('button');
-    button.textContent = 'Посмотреть кино';
     button.id = 'my-custom-button';
-    button.className = 'style_button__PNtXT style_buttonSize52__b5OBe style_buttonPrimary__ndPAb';
-    button.addEventListener('click', () => {
-        const currentUrl = window.location.href;
-        const targetUrl = currentUrl.replace('kinopoisk.ru', 'sspoisk.ru');
-        window.open(targetUrl, '_blank');
-    });
-    wrapper.appendChild(button);
-    container.appendChild(wrapper);
+    button.textContent = 'Смотреть кино';
+    // button.className = 'style_button__PNtXT style_buttonSize52__b5OBe style_buttonPrimary__ndPAb';
+    button.className = 'style_button__PNtXT styles_watchOnlineButton__ruFtI style_buttonSize52__b5OBe style_buttonPlus__TjQez style_buttonLight____6ma style_withIconLeft___Myt9';
+    button.style.marginLeft = '8px';
+
+    button.onclick = () => {
+      const url = location.href.replace('kinopoisk.ru', 'sspoisk.ru');
+      window.open(url, '_blank');
+    };
+
+    filmContainer.appendChild(button);
+    clearInterval(interval);
+  }
+
+  if (seriesContainer && !document.getElementById('my-custom-button')) {
+    const button = document.createElement('button');
+    button.id = 'my-custom-button';
+    button.textContent = 'Смотреть сериал';
+    // button.className = 'style_button__PNtXT style_buttonSize52__b5OBe style_buttonPrimary__ndPAb';
+    button.className = 'style_button__PNtXT styles_watchOnlineButton__ruFtI style_buttonSize52__b5OBe style_buttonPlus__TjQez style_buttonLight____6ma style_withIconLeft___Myt9';
+    button.style.marginLeft = '8px';
+
+    button.onclick = () => {
+      const url = location.href.replace('kinopoisk.ru', 'sspoisk.ru');
+      window.open(url, '_blank');
+    };
+
+    seriesContainer.appendChild(button);
+    clearInterval(interval);
+  }
 }
 
-const observer = new MutationObserver(() => {
-    const container = document.querySelector('.styles_buttonsContainer__HREZO');
-    if (container) {
-        insertButton();
-        observer.disconnect();
-    }
-});
+const interval = setInterval(insertButton, 500);
 
-observer.observe(document.body, { childList: true, subtree: true });
+
+// style_button__PNtXT kinopoisk-watch-online-button styles_watchOnlineButton__ruFtI style_buttonSize52__b5OBe style_buttonPlus__TjQez style_buttonLight____6ma style_withIconLeft___Myt9
