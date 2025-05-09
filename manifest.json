@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "sspoisk Injector",
+    "version": "1.0",
+    "description": "Добавляет кнопку на страницы фильмов Кинопоиска",
+    "permissions": ["scripting"],
+    "host_permissions": [
+      "https://www.kinopoisk.ru/film/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://www.kinopoisk.ru/film/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
